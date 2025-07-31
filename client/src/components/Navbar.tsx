@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import leLogo from "../assets/kn_logo.png";
+import knlogo from "../assets/logosansbg.png";
 import { useState } from "react";
 import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 
@@ -24,20 +24,18 @@ const Navbar: React.FC<NavbarProps> = ({setShowLogin}) => {
 
   return (
     <div
-      // Conteneur principal de la navbar avec des classes responsives et dynamiques
-      className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all duration-300 ease-in-out ${
-        location.pathname === "/" && "bg-light"
+      className={`flex items-center -py-4 justify-between px-6 md:px-16 lg:px-24 xl:px-32 text-gray-600 border-b border-borderColor relative transition-all duration-300 ease-in-out ${
+        location.pathname === "/" && ""
       }`}
     >
       <Link to="/">
-        <img src={leLogo} className="h-32 w-24" alt="logo" /> 
-        {/* Logo qui redirige vers l'accueil */}
+        <img src={knlogo} className="h-16 w-20 " alt="logo" /> 
       </Link>
 
       <div
         // Menu de navigation, s'affiche différemment selon la taille d'écran
         className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 ${
-          location.pathname === "/" ? "bg-light" : "bg-white"
+          location.pathname === "/" ? "bg-white" : "bg-white"
         } ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
       >
         {menuLinks.map((link, index) => {
